@@ -1,0 +1,21 @@
+
+
+```{r}
+library (ggplot2)
+library (dplyr)
+
+labs <- read.csv("~/Documents/IS4250/Tutorial 2/labs.csv")
+
+labs$SvcSat = as.numeric(labs$SvcSat)
+cor.test(labs$SvcSat, labs$WaitTime)
+
+# p-value < 0.05, hence, there is a strong evidence to show that service satisfaction is correlated with waiting time
+
+labs$BMI <- labs$WT/(labs$HT*labs$HT)
+
+labs$TC = as.numeric(labs$TC)
+cor.test(labs$BMI, labs$TC)
+
+# p-value < 0.05, hence, there is a strong evidence to show that BMI is correlated with Total Cholesterol
+
+```
